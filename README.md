@@ -5,7 +5,7 @@ Eliminates empty return trips by suggesting ranked return loads
 based on route, capacity, profit per km, and cargo compatibility.
 
 ## Live Demo
-https://smart-load-sharing1.vercel.app
+https://logistics-load-sharing-application.vercel.app/
 
 ## Tech Stack
 - React 18 + TypeScript
