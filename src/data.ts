@@ -61,16 +61,7 @@ export const CITIES = [
   'Visakhapatnam',
 ];
 
-const COMPANIES = [
-  'TransIndia Logistics',
-  'QuickHaul Express',
-  'BlueVista Transport',
-  'CargoKing Solutions',
-  'RoadMaster Freight',
-  'SwiftLoad Carriers',
-  'OmniRoute Logistics',
-  'FreightLink India',
-];
+
 
 const TRUCK_LOAD_COMPATIBILITY: Record<string, string[]> = {
   'Refrigerated': ['Pharmaceuticals', 'Food & Beverages', 'Agricultural Products'],
@@ -83,7 +74,7 @@ const TRUCK_LOAD_COMPATIBILITY: Record<string, string[]> = {
   'Trailer':      ['Machinery', 'Steel & Metal', 'Construction Material'],
 };
 
-const TRUCK_CAPACITY_MT: Record<string, number> = {
+export const TRUCK_CAPACITY_MT: Record<string, number> = {
   'Flatbed':      20,
   'Refrigerated': 15,
   'Tanker':       20,
