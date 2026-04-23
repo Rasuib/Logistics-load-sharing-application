@@ -102,7 +102,36 @@ export default function LoadSuggestions({ suggestions, truckInput, onSelect }: P
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-slate-100 flex justify-end">
+              <div className="mt-3 pt-3 border-t border-slate-100">
+                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                  Score Breakdown
+                </div>
+                <div className="grid grid-cols-4 gap-1.5">
+                  {[
+                    { label: 'Route',    value: load.scoreBreakdown.route,    max: 40, color: 'bg-cyan-500' },
+                    { label: 'Capacity', value: load.scoreBreakdown.capacity, max: 30, color: 'bg-teal-500' },
+                    { label: 'Profit',   value: load.scoreBreakdown.profit,   max: 20, color: 'bg-emerald-500' },
+                    { label: 'Type',     value: load.scoreBreakdown.type,     max: 10, color: 'bg-amber-500' },
+                  ].map(({ label, value, max, color }) => (
+                    <div key={label} className="flex flex-col gap-1">
+                      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div
+                          className={`h-full rounded-full ${color}`}
+                          style={{ width: `${(value / max) * 100}%` }}
+                        />
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-slate-400">{label}</span>
+                        <span className="text-[10px] font-bold text-slate-600">
+                          {value}/{max}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
                 <button
                   onClick={() => onSelect(load)}
                   className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-600 text-white font-semibold text-sm shadow-md shadow-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
